@@ -3,7 +3,7 @@ import json
 import os 
 
 
-this_path = os.path.dirname(os.path.abspath(__file__)) + "\\"
+this_path = os.path.dirname(os.path.abspath(__file__)) + "/"
 
 class bc:
     HEADER = '\033[95m'
