@@ -1,19 +1,13 @@
 import random
 import json
-import os 
-
+import os
+from datetime import datetime
 
 this_path = os.path.dirname(os.path.abspath(__file__)) + "/"
+dt = datetime.now
 
 class bc:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
     ENDC = '\033[0m'
-    BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
 
@@ -233,6 +227,8 @@ if __name__ == "__main__":
 
     field = loadfield()
 
+    start = dt()
+
     field_num = convert_tonum(field)
     field_cluster = convert_tocluster(field_num)
 
@@ -259,6 +255,8 @@ if __name__ == "__main__":
             field_cluster = convert_tocluster(field_num)
             possibilities = og_possibilities.copy()
 
+    end = dt()
+
     print("Starting field:\n")
     printfield(loadfield())
 
@@ -266,3 +264,5 @@ if __name__ == "__main__":
 
     print("Solved field:\n")
     printfield(field)
+
+    print(f"\nTook {end-start}")
